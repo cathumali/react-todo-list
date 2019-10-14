@@ -6,7 +6,7 @@ export class TodoItem extends Component {
     getStyle = () => {
         return {
             background : '#f4f4f4',
-            padding: '10px',
+            padding: '6px',
             borderBottom:  '1px #ccc dotted',
             textDecoration : this.props.todo.completed ? 'line-through' : 'none' 
         }
@@ -28,7 +28,7 @@ export class TodoItem extends Component {
                     </label>
                     <button 
                         onClick={this.props.deleteTodo.bind(this, id)} 
-                        style={btnStyle} >x</button>
+                        style={btnStyle} >X</button>
                 </div>
             </div>
         )
@@ -46,10 +46,12 @@ const btnStyle = {
         background: '#ff0000',
         color: "#fff",
         border: 'none',
-        padding: '3px 9px',
+        padding: '2px 7px',
         borderRadius: '50%',
         cursor: 'pointer',
-        float: 'right'
+        float: 'right',
+        fontSize: '0.8em',
+        fontWeight: '700',
 }
 
 export default TodoItem

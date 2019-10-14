@@ -92,20 +92,24 @@ export class App extends Component {
       <Router>
         <div className="App">
         <Header />
-          <div className='container'>            
+        <div className='container'>
+          <div className='row'>        
             <Route exact path="/" render={ props => (
               <React.Fragment>
-                <AddTodo addTodo={this.addTodo} />
-                <Todos 
-                    todos={this.state.todos} 
-                    markComplete={this.markComplete} 
-                    deleteTodo={this.deleteTodo} 
-                />
+                <div className="offset-md-2 col-md-8">
+                  <AddTodo addTodo={this.addTodo} />
+                  <Todos 
+                      todos={this.state.todos} 
+                      markComplete={this.markComplete} 
+                      deleteTodo={this.deleteTodo} 
+                  />
+                </div>
 
               </React.Fragment>
             )} />
             <Route path="/about" component={About} />
           </div>
+        </div>
         </div>
       </Router>
     );
