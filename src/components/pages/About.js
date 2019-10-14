@@ -4,7 +4,7 @@ import studyImg from './studying.svg';
 export default function About() {
     return (
         <React.Fragment>  
-            <div className='container'>
+            <div className='container about'>
                 <div className='row'>
                     <div className="jumbotron text-center">
                         <h1>About</h1>

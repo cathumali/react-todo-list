@@ -15,20 +15,12 @@ a {
 }
 
 .container{
-  max-width: fit-content;
   padding-top: 1rem;
+} 
+
+.about {
+  max-width: fit-content;
 }
-/*
-.btn{
-  display: inline-block;
-  border: none;
-  background: #fff;
-  padding: 7px 20px;
-  cursor: pointer;
-}
-.btn:hover{
-  background: #666;
-} */
 
 header h1,
 .jumbotron h1{
