@@ -4,34 +4,17 @@ import PropTypes from 'prop-types';
 export class TodoItem extends Component {
 
     getStyle = () => {
-
         return {
             background : '#f4f4f4',
             padding: '10px',
             borderBottom:  '1px #ccc dotted',
             textDecoration : this.props.todo.completed ? 'line-through' : 'none' 
         }
-
-        //OR 
-        // return ( this.props.todo.completed ) 
-        //                 ? { textDecoration: 'line-through' } 
-        //                 : { textDecoration: 'none' } ;
-    }
-
-    markComplete = (e) => {
-        // console.log(this.props.todo);
-        return this.props.todo.completed = true;
     }
 
     render() {
-        // Style in Variable
-        // const itemStyle = {
-        //     backgroundColor:'#f4f4f4'
-        // }
-
-        // console.log(this.props);
-
         const { id, title } = this.props.todo;
+
         return (
             <div style={this.getStyle()}>
                 <p>
@@ -53,7 +36,7 @@ export class TodoItem extends Component {
 TodoItem.propTypes = {
     todo: PropTypes.object.isRequired,
     markComplete: PropTypes.func.isRequired,
-    delTodo: PropTypes.func.isRequired,    
+    deleteTodo: PropTypes.func.isRequired,    
 }
 
 const btnStyle = { 
