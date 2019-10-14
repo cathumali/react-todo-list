@@ -71,8 +71,8 @@ export class App extends Component {
     //   completed: false
     // }
     // this.setState({todos:[...this.state.todos, newTodo]})
-
-    axios.post('https://jsonplaceholder.typicode.com/todos', {
+    if(title){
+      axios.post('https://jsonplaceholder.typicode.com/todos', {
             title,
             completed : false
           })
@@ -80,6 +80,10 @@ export class App extends Component {
             res.data.id = uuid.v4();
             this.setState({ todos: [...this.state.todos, res.data] });
           });
+    }else{
+      alert('Please enter a valid value!');
+    }
+
   };
 
   render() {
@@ -87,8 +91,8 @@ export class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div className='container'>
-            <Header />
+        <Header />
+          <div className='container'>            
             <Route exact path="/" render={ props => (
               <React.Fragment>
                 <AddTodo addTodo={this.addTodo} />

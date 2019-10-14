@@ -23,20 +23,27 @@ export class AddTodo extends Component {
                 style={{display:"flex"}}
                 onSubmit={this.onSubmit}
             >
-                <input 
-                    type="text" 
-                    name="title" 
-                    placeholder="Add Todo ..."
-                    style={{flex:'10'}}
-                    value={this.state.title}
-                    onChange={this.onChange}
-                />
-                <input 
-                    type="submit"
-                    value="submit"
-                    className="btn"
-                    style={{flex:'1'}}
-                />
+                <div className="input-group mb-3">
+                    <input 
+                        type="text" 
+                        name="title" 
+                        className="form-control"
+                        placeholder="Add Todo ..."
+                        style={{flex:'10'}}
+                        value={this.state.title}
+                        onChange={this.onChange}
+                    />
+
+                    <div className="input-group-append">
+                        <button className="btn btn-outline-secondary" 
+                                type="submit"
+                                value="submit"
+                                className="btn"
+                                style={{flex:'1'}}                                
+                                >Add
+                        </button>
+                    </div>
+                </div>
             </form>
         )
     }
