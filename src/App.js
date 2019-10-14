@@ -91,25 +91,25 @@ export class App extends Component {
     return (
       <Router>
         <div className="App">
-        <Header />
-        <div className='container'>
-          <div className='row'>        
-            <Route exact path="/" render={ props => (
-              <React.Fragment>
-                <div className="offset-md-2 col-md-8">
-                  <AddTodo addTodo={this.addTodo} />
-                  <Todos 
-                      todos={this.state.todos} 
-                      markComplete={this.markComplete} 
-                      deleteTodo={this.deleteTodo} 
-                  />
-                </div>
+          <Header />    
+          <Route exact path="/" render={ props => (
+            <React.Fragment>
+              <div className='container'>
+                <div className='row'>    
 
-              </React.Fragment>
-            )} />
-            <Route path="/about" component={About} />
-          </div>
-        </div>
+                  <div className="offset-md-2 col-md-8">
+                    <AddTodo addTodo={this.addTodo} />
+                    <Todos 
+                        todos={this.state.todos} 
+                        markComplete={this.markComplete} 
+                        deleteTodo={this.deleteTodo} 
+                    />
+                  </div>
+                </div>
+              </div>
+            </React.Fragment>
+          )} />
+          <Route path="/about" component={About} />
         </div>
       </Router>
     );

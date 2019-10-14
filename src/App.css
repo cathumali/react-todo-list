@@ -15,7 +15,7 @@ a {
 }
 
 .container{
-  /* max-width: 50%; */
+  max-width: fit-content;
   padding-top: 1rem;
 }
 /*
