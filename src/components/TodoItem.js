@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 
 export class TodoItem extends Component {
 
-    getStyle = () => {
+    crossIfDone = () => {
         return {
-            background : '#f4f4f4',
-            padding: '6px',
-            borderBottom:  '1px #ccc dotted',
             textDecoration : this.props.todo.completed ? 'line-through' : 'none' 
         }
     }
@@ -16,10 +13,9 @@ export class TodoItem extends Component {
         const { id, title } = this.props.todo;
 
         return (
-            <div style={this.getStyle()}>
-
+            <div style={getStyle}>
                 <div className="checkbox">
-                    <label>
+                    <label style={this.crossIfDone()} >
                         <input type="checkbox" 
                             onChange={this.props.markComplete.bind(this, id)} />
                         {' '}
@@ -53,5 +49,9 @@ const btnStyle = {
         fontSize: '0.8em',
         fontWeight: '700',
 }
-
+const getStyle = {
+    background : '#f4f4f4',
+    padding: '6px',
+    borderBottom:  '1px #ccc dotted',
+}
 export default TodoItem

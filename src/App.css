@@ -42,4 +42,6 @@ label{
 .jumbotron img{
   height: 30vh;
 }
- 
+ input{
+  vertical-align: sub;
+ }
